@@ -1,0 +1,215 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="proc_Open_Browser" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_api" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_token" Type="InArgument(x:String)" />
+    <x:Property Name="in_kc_username" Type="InArgument(x:String)" />
+    <x:Property Name="in_kc_pw" Type="InArgument(ss:SecureString)" />
+  </x:Members>
+  <this:proc_Open_Browser.in_api>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:proc_Open_Browser.in_api>
+  <this:proc_Open_Browser.in_token>
+    <InArgument x:TypeArguments="x:String" />
+  </this:proc_Open_Browser.in_token>
+  <this:proc_Open_Browser.in_kc_username>
+    <InArgument x:TypeArguments="x:String" />
+  </this:proc_Open_Browser.in_kc_username>
+  <this:proc_Open_Browser.in_kc_pw>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:proc_Open_Browser.in_kc_pw>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2655,1513</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>proc_Open_Browser_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="proc_Open_Browser" sap:VirtualizedContainerService.HintSize="1112,1448" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: eZhishi: Online Interactive Teaching &amp; Learning, Question Bank &amp; LMS" sap:VirtualizedContainerService.HintSize="1050,1337" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1120" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'User Login 用户登录'" sap:VirtualizedContainerService.HintSize="954,1005" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Timeout="3" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,788" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'User Login 用户登录'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Text="[in_kc_username]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.ezhishi.net/Contents/" DesignTimeRectangle="302, 808, 343, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT txt_name'" FullSelectorArgument="&lt;webctrl id='txt_name' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txt_name' tag='INPUT' type='text' class='txt_loginid' aaname='' /&gt;" Guid="79057b93-c97a-42a6-8efe-10df302c4120" InformativeScreenshot="03b2d4ad2b347fc9576023bef51abb3b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eZhishi: Online Interactive Teaching &amp;amp; Learning, Question Bank &amp;amp; LMS' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="309, 767, 222, 32" ElementType="Text" FriendlyName="'User Login 用户登录'" FullSelectorArgument="&lt;webctrl parentid='login' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='login' tag='A' type='' class='' aaname='User Login 用户登录' check:innerText='User Login 用户登录' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT txt_password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" IsPassword="True" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" SecureText="[in_kc_pw]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.ezhishi.net/Contents/" DesignTimeRectangle="660, 808, 187, 52" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT txt_password'" FullSelectorArgument="&lt;webctrl id='txt_password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txt_password' tag='INPUT' type='password' class='txt_password' aaname='' /&gt;" Guid="dcf60d6b-d5cd-4f4b-8348-271234dc5ad2" InformativeScreenshot="bc46a6b1c6af627e90ba1c55e470cbff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eZhishi: Online Interactive Teaching &amp;amp; Learning, Question Bank &amp;amp; LMS' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="863, 808, 110, 50" ElementType="Button" FriendlyName="'登录 Login'" FullSelectorArgument="&lt;webctrl id='btn_login' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn_login' tag='BUTTON' type='button' class='txt_login' aaname='                 登录 Login               ' check:innerText='登录 Login' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click '登录 Login'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.ezhishi.net/Contents/" DesignTimeRectangle="863, 808, 110, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'登录 Login'" FullSelectorArgument="&lt;webctrl id='btn_login' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn_login' tag='BUTTON' type='button' class='txt_login' aaname='                 登录 Login               ' check:innerText='登录 Login' /&gt;" Guid="674c330d-a51f-4254-898c-af44d17e8148" InformativeScreenshot="3954271979b4561901dd63796708134c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eZhishi: Online Interactive Teaching &amp;amp; Learning, Question Bank &amp;amp; LMS' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,358" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                        <Literal x:TypeArguments="x:String">Ezhishi page not available</Literal>
+                      </InArgument>
+                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                        <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <Throw Exception="[New BusinessRuleException(&quot;koobits page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.ezhishi.net/Contents/" DesignTimeRectangle="309, 767, 222, 32" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'User Login 用户登录'" FullSelectorArgument="&lt;webctrl parentid='login' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='login' tag='A' type='' class='' aaname='User Login 用户登录' check:innerText='User Login 用户登录' /&gt;" Guid="0461935a-c538-4e87-914e-61e5710ad927" InformativeScreenshot="09f1bf2e8acde5926ddd6f70e9a6bfb6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eZhishi: Online Interactive Teaching &amp;amp; Learning, Question Bank &amp;amp; LMS' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1757, 40, 1734, 1399" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="961e939cbd2d4c9ee4df6759f0d584c7.jpg" Selector="&lt;html app='chrome.exe' title='eZhishi: Online Interactive Teaching &amp;amp; Learning, Question Bank &amp;amp; LMS' /&gt;" Title="KooBits - Login" Url="https://www.ezhishi.net/Contents/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
