@@ -229,12 +229,12 @@
                                   </Sequence>
                                 </ui:CommentOut.Body>
                               </ui:CommentOut>
-                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Status'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' idx='2' /&gt;&lt;webctrl tag='td' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
+                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Status'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' idx='2' /&gt;&lt;webctrl tag='td' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
                                 <uix:NExtractData.Target>
                                   <uix:TargetAnchorable DesignTimeRectangle="288, 451, 1159, 132" DesignTimeScaleFactor="1" FriendlyName="'序号S/N作业标题Assignment Tit…'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="73c3824e-28ec-48e8-b876-53dce4910f74" InformativeScreenshot="4758f4bf01b5a28b8e052e41a6814199.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eZhishi: Online Interactive Teaching &amp;amp; Learning, Question Bank &amp;amp; LMS' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NExtractData.Target>
                               </uix:NExtractData>
-                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim count As Integer = 0&#xD;&#xA;Dim searchText As String = &quot;Not Submitted&quot;&#xD;&#xA;&#xD;&#xA;For Each row As System.Data.DataRow In ExtractDataTable.Rows&#xD;&#xA;    For Each column As System.Data.DataColumn In ExtractDataTable.Columns&#xD;&#xA;        If row(column).ToString().ToLower() = searchText.ToLower() Then&#xD;&#xA;            count += 1&#xD;&#xA;        End If&#xD;&#xA;    Next&#xD;&#xA;Next&#xD;&#xA;countResult = count&#xD;&#xA;Console.WriteLine(&quot;The text '&quot; &amp; searchText &amp; &quot;' appears &quot; &amp; count &amp; &quot; times in the DataTable.&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim count As Integer = 0&#xA;Dim searchText As String = &quot;Not Submitted&quot;&#xA;&#xA;For Each row As System.Data.DataRow In ExtractDataTable.Rows&#xA;    For Each column As System.Data.DataColumn In ExtractDataTable.Columns&#xA;        If row(column).ToString().ToLower() = searchText.ToLower() Then&#xA;            count += 1&#xA;        End If&#xA;    Next&#xA;Next&#xA;countResult = count&#xA;Console.WriteLine(&quot;The text '&quot; &amp; searchText &amp; &quot;' appears &quot; &amp; count &amp; &quot; times in the DataTable.&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                                 <ui:InvokeCode.Arguments>
                                   <InArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">[ExtractDataTable]</InArgument>
                                   <OutArgument x:TypeArguments="x:Int32" x:Key="countResult">[countResult]</OutArgument>
@@ -272,9 +272,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">No outstanding assignment(s)</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <Literal x:TypeArguments="x:String">*No outstanding* assignment(s)</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -292,7 +298,7 @@
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
-                                    <Literal x:TypeArguments="x:String">Ezhishi assignment page not available</Literal>
+                                    <Literal x:TypeArguments="x:String">Ezhishi assignment page *not available*</Literal>
                                   </InArgument>
                                   <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
                                     <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
@@ -326,9 +332,15 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Dashboard not available</InArgument>
-                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                              <Literal x:TypeArguments="x:String">Ezhishi dashboard *not available*</Literal>
+                            </InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                              <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <Throw Exception="[New BusinessRuleException(&quot;Dashboard not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
@@ -341,21 +353,21 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1680,2885" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1680,2845" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'BACK 返回'" sap:VirtualizedContainerService.HintSize="1618,2770" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'BACK 返回'" sap:VirtualizedContainerService.HintSize="1618,2730" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1114,2553" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1114,2513" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1052,343" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1052,303" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                           <ui:CommentOut.Body>
                             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_29">
                               <sap:WorkflowViewStateService.ViewState>
@@ -430,9 +442,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">["Detected " + "*" + countResult.ToString + "*" + " assignment(s) "]</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Detected &quot; + &quot;*&quot; + countResult.ToString + &quot;*&quot; + &quot; assignment(s) &quot;" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -446,9 +464,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">No outstanding assignment(s)</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <Literal x:TypeArguments="x:String">*No outstanding* assignment(s)</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -465,7 +489,9 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Assignment page not available</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                    <Literal x:TypeArguments="x:String">Assignment page *not available*</Literal>
+                                  </InArgument>
                                   <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
                                     <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
                                   </InArgument>
@@ -498,9 +524,15 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Login fail</InArgument>
-                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                              <Literal x:TypeArguments="x:String">*Login fail*</Literal>
+                            </InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                              <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <Throw Exception="[New BusinessRuleException(&quot;Login fail&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />

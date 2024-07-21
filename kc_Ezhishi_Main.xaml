@@ -110,7 +110,7 @@
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="proc_Telegram_API.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Checking *Katelyn's* Ezhishi as at &quot; + DateTime.Now.ToString(&quot;dd MMM yyyy HH:mm&quot;)" />
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Checking *Katelyn's* Ezhishi as at *&quot; + DateTime.Now.ToString(&quot;dd MMM yyyy HH:mm&quot;) + &quot;*&quot;" />
         </InArgument>
         <InOutArgument x:TypeArguments="ss:SecureString" x:Key="io_api">
           <VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="api" />
