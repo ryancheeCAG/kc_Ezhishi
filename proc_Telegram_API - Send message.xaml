@@ -123,6 +123,7 @@
       <ui:HttpClient.Parameters>
         <InArgument x:TypeArguments="x:String" x:Key="text">[in_TelegramMessageToSend]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="chat_id">-4217148770</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="parse_mode">Markdown</InArgument>
       </ui:HttpClient.Parameters>
       <ui:HttpClient.UrlSegments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
